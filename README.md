@@ -21,6 +21,7 @@ Options:
 - **from_position** *Object:{left, top}* default: elem1.offset() - Set animate position for element2
 - **to_position** *Object:{left, top}* default: elem2.offset() - Set animate position for element1
 
+**sample**
 
 ```html:
 <html>
@@ -39,8 +40,6 @@ $(function(){
 
 });
 
-**sample**
-
 </script>
 </head>
 
@@ -53,7 +52,7 @@ $(function(){
 </html>
 ```
 
-**Draggable sample**
+**Draggable sample** - [Plunker](http://embed.plnkr.co/XMB4UK/)
 
 ```html:
 <html>
