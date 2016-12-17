@@ -39,6 +39,8 @@ $(function(){
 
 });
 
+**sample**
+
 </script>
 </head>
 
@@ -48,5 +50,80 @@ $(function(){
 <div class="box A">A</div>
 <div class="box B">B</div>
 </body>
+</html>
+```
+
+**Draggable sample**
+
+```html:
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="jquery.swapAnimate.js"></script>
+
+<script>
+
+var original_pos = {};
+
+$(function(){
+
+	$("#swap").on('click', function(){
+		$(".A").swapAnimate($(".B"));
+	});
+	$("#swap2").on('click', function(){
+		$(".B").swapAnimate($(".C"));
+	});
+	$("#swap3").on('click', function(){
+		$(".C").swapAnimate($(".A"));
+	});
+
+	$(".box").draggable({
+		zIndex: 100,
+		start: function(e){
+			original_pos = $(this).offset(); // Store Original Position
+		}
+	});
+	$(".FLAME").droppable({
+		drop: function(e){
+			$(e.toElement).swapAnimate(
+				$(e.target).find(".box"),
+				{
+					from_position: original_pos, // $(e.target).find(".box") will move this Position
+					speed1: 100,
+					easing2: "easeOutBack"
+				}
+			);
+		},
+		deactivate: function(e){
+			$(e.toElement).css({left: 0, top: 0});
+		},
+		hoverClass: "hover"
+	});
+
+});
+
+</script>
+
+</head>
+
+<body>
+<div>
+<button id="swap">swap A and B</button>
+<button id="swap2">swap B and C</button>
+<button id="swap3">swap C and A</button>
+</div>
+<hr>
+<div class="box A">A</div>
+<div class="FLAME2">
+<div class="FLAME">Droppable
+	<div class="box B">B</div>
+</div>
+<div class="box C">C</div>
+</div>
+
+</body>
+
 </html>
 ```
