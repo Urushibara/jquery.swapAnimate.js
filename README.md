@@ -1,5 +1,7 @@
 # jquery.swapAnimate.js
 
+![image](http://i.imgur.com/zWJ3MJc.gif)
+
 Simple useage:
 ``$("#elem1").swapAnimate($("#elem2"));``
 
