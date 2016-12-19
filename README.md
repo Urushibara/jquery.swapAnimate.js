@@ -15,7 +15,7 @@ Options:
 - **zIndex** *Number* default: 100 - Set both z-index for the helper while being animation
 - **zIndex1** *Number* default: 100 - Set a part of value
 - **zIndex2** *Number* default: 100 - Set a part of value
-- **dock_auto** *Boolean* default true - Set true to dock the swapped parents after animation.
+- **dock_auto** *Boolean* default true - Set true to dock the swapped parents after animation.<br>If you want to suppress changing DOM, set false.
 - **before_dock** *function(elem1, elem2)* default: undefined - Catch event for before docking.
 - **done** *function(elem1, elem2)* default: undefined - Catch event for after docking.
 - **from_position** *Object:{left, top}* default: elem1.offset() - Set animate position for element2
