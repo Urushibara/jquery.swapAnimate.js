@@ -1,5 +1,7 @@
 # jquery.swapAnimate.js
 
+Swap two elements with animation plugin.
+
 ![image](http://i.imgur.com/zWJ3MJc.gif)
 
 Simple useage:
